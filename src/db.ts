@@ -41,3 +41,10 @@ export async function saveDoc(doc: { id?: number; title: string; content: any })
   await tx.done;
   return id as number;
 }
+
+export async function deleteDoc(id: number) {
+  const db = await dbPromise;
+  const tx = db.transaction('documents', 'readwrite');
+  await tx.store.delete(id);
+  await tx.done;
+}
