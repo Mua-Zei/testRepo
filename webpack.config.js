@@ -2,7 +2,7 @@ const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+module.exports = (env, argv) => ({
   entry: './src/main.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -58,5 +58,5 @@ module.exports = {
     },
     hot: true,
   },
-  mode: 'development',
-};
+  mode: argv.mode || 'development',
+});
