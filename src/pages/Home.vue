@@ -64,6 +64,10 @@ export default defineComponent({
           canvas.value!.height = height;
         };
         resize();
+        // create some initial snowflakes so the effect is visible immediately
+        for (let i = 0; i < 100; i++) {
+          createFlake(Math.random() * width, Math.random() * height);
+        }
         window.addEventListener('resize', resize);
         canvas.value.addEventListener('mousemove', (e) => {
           for (let i = 0; i < 5; i++) {
@@ -83,7 +87,7 @@ export default defineComponent({
 .home {
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  flex: 1;
 }
 .snow-canvas {
   position: absolute;

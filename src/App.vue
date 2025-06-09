@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <nav class="nav">
       <router-link to="/">首页</router-link>
       <router-link to="/writer">Writer</router-link>
@@ -18,6 +18,12 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
 .nav {
   display: flex;
   gap: 1rem;
