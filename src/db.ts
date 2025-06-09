@@ -33,7 +33,11 @@ export async function getDoc(id: number) {
 export async function saveDoc(doc: { id?: number; title: string; content: any }) {
   const db = await dbPromise;
   const tx = db.transaction('documents', 'readwrite');
-  const id = await tx.store.put(doc);
+  const record =
+    doc.id === undefined
+      ? { title: doc.title, content: doc.content }
+      : doc;
+  const id = await tx.store.put(record);
   await tx.done;
   return id as number;
 }
