@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <h1>Hello Vue 3 + TypeScript</h1>
+    <nav class="nav">
+      <router-link to="/">首页</router-link>
+      <router-link to="/writer">Writer</router-link>
+      <router-link to="/playground">Playground</router-link>
+    </nav>
+    <router-view />
   </div>
 </template>
 
@@ -13,4 +18,13 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.nav {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: #eee;
+}
+.nav a.router-link-exact-active {
+  font-weight: bold;
+}
 </style>
