@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A minimal Vue 3 project using Webpack and TypeScript",
   "scripts": {
-    "dev": "webpack serve --config webpack.config.js",
-    "build": "webpack --config webpack.config.js"
+    "dev": "webpack serve --config webpack.config.js --mode development",
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "dependencies": {
     "quill": "^2.0.3",
